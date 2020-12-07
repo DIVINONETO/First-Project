@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: sherlock
+  creationTimestamp: null
+  labels:
+    io.kompose.service: mysql
+  name: sherlock-mysql 
+spec:
+  ports:
+  - name: "sherlock-mysql"
+    port: 3306  
+    targetPort: 3306
+  selector:
+    io.kompose.service: mysql
+status:
+  loadBalancer: {}
